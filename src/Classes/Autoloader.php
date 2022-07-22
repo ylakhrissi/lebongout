@@ -12,13 +12,7 @@ class Autoloader
 
     static function autoload($class)
     {
-      /* var_dump(__DIR__);
-
-        var_dump($class);
-
-        var_dump(__NAMESPACE__);*/
         $class = str_replace(__NAMESPACE__.'\\', '', $class);
-        //var_dump($class);
 
         $class = str_replace('\\', '/', $class);
         if (file_exists(__DIR__ . '/' . $class . '.php')) {
